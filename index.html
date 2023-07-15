@@ -3,26 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
     <title>Another One Productivity Tool</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="pomodoroTimer">
-        <button onclick="work()">work</button>
-        <button onclick="rest()">rest</button>
-        <br>
-        <button onclick="incrementWork()">+</button> <button onclick="decrementWork()">-</button>
-        <p id="workTime">25</p>
+        <div class="workRestContainer">
+            <button onclick="work()">work</button>
+            <button onclick="rest()">rest</button>
+        </div>
         
+        <div class="workRestContainer">
+            <button onclick="decrementWork()">-</button>
+            <p id="workTime">25</p>
+            <button onclick="incrementWork()">+</button>
+            
+            
+        </div>     
 
         <button onclick="incrementRest()">+</button><button onclick="decrementRest()">-</button>
+        
         <p id="restTime">5</p>
         
 
 
         <br>
+
         <div id="pomodoro">25:00</div>
+        
         <button id="workButton" onclick="start()">start</button>
         <button id="workButton" onclick="reset()">reset</button>
     </div>

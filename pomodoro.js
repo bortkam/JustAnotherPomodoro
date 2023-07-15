@@ -48,6 +48,7 @@ function reset() {
         document.getElementById("workButton").innerHTML="start";
     }
     isWorking = false;
+    
     if (mode === "work") {
         document.getElementById("pomodoro").innerHTML=changeTimeFormat(getTimeInSeconds());
     } else {
@@ -60,6 +61,7 @@ function start() {
     if (timerClear === true) {
         timeToGo = getTimeInSeconds();
     }
+
     if (isWorking) {
         isWorking = false;
         document.getElementById("workButton").innerHTML="start";
@@ -88,40 +90,47 @@ function rest() {
     }
 }
 
+function IncrementDecrement(whatToIncrementDecrement, incrementOrDecrement) {
+    let numberToChange;
 
+    if (whatToIncrementDecrement === "workTime") {
+        numberToChange = parseInt(document.getElementById("workTime").innerHTML);
+    } else {
+        numberToChange = parseInt(document.getElementById("restTime").innerHTML);
+    }
 
-function incrementWork() {
-    let addOne = document.getElementById("workTime").innerHTML;
-    addOne++;
-    document.getElementById("workTime").innerHTML=addOne;
+    if (incrementOrDecrement === "increment") {
+        if (numberToChange <= 58) {
+            numberToChange++;
+        }
+    } else {
+        if (numberToChange >= 2) {
+            numberToChange--;
+        }
+    }
+    document.getElementById(whatToIncrementDecrement).innerHTML=numberToChange;
     if (isWorking === false) {
         reset();
     }
+    
+}
+
+function incrementWork() {
+    const whatToIncrementDecrement = document.getElementById("workTime").id;
+    IncrementDecrement(whatToIncrementDecrement,"increment");
 }
 
 function decrementWork() {
-    let subOne = document.getElementById("workTime").innerHTML;
-    subOne--;
-    document.getElementById("workTime").innerHTML=subOne;
-    if (isWorking === false) {
-        reset();
-    }
+    const whatToIncrementDecrement = document.getElementById("workTime").id;
+    IncrementDecrement(whatToIncrementDecrement,"decrement");
 }
 
 function incrementRest() {
-    let addOne = document.getElementById("restTime").innerHTML;
-    addOne++;
-    document.getElementById("restTime").innerHTML=addOne;
-    if (isWorking === false) {
-        reset();
-    }
+    const whatToIncrementDecrement = document.getElementById("restTime").id;
+    IncrementDecrement(whatToIncrementDecrement,"increment");
 }
 
 function decrementRest() {
-    let subOne = document.getElementById("restTime").innerHTML;
-    subOne--;
-    document.getElementById("restTime").innerHTML=subOne;
-    if (isWorking === false) {
-        reset();
-    }
+    const whatToIncrementDecrement = document.getElementById("restTime").id;
+    IncrementDecrement(whatToIncrementDecrement,"decrement");
 }
