@@ -2,7 +2,7 @@ const minuteDurationInSeconds = 60;
 var time,
     timerClear = true,
     mode = "work",
-    isWorking,
+    isWorking = false,
     counterInterval,
     timeToGo;
 
@@ -88,12 +88,40 @@ function rest() {
     }
 }
 
-function increment() {
+
+
+function incrementWork() {
     let addOne = document.getElementById("workTime").innerHTML;
     addOne++;
     document.getElementById("workTime").innerHTML=addOne;
+    if (isWorking === false) {
+        reset();
+    }
 }
 
-function decrement() {
+function decrementWork() {
+    let subOne = document.getElementById("workTime").innerHTML;
+    subOne--;
+    document.getElementById("workTime").innerHTML=subOne;
+    if (isWorking === false) {
+        reset();
+    }
+}
 
+function incrementRest() {
+    let addOne = document.getElementById("restTime").innerHTML;
+    addOne++;
+    document.getElementById("restTime").innerHTML=addOne;
+    if (isWorking === false) {
+        reset();
+    }
+}
+
+function decrementRest() {
+    let subOne = document.getElementById("restTime").innerHTML;
+    subOne--;
+    document.getElementById("restTime").innerHTML=subOne;
+    if (isWorking === false) {
+        reset();
+    }
 }
