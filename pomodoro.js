@@ -75,13 +75,17 @@ function start() {
 }
 
 function work() {
-    mode = "work";
-    reset();
+    if (mode !== "work") {
+        mode = "work";
+        reset();
+    } 
 }
 
 function rest() {
-    mode = "rest";
-    reset();
+    if (mode !== "rest") {
+        mode = "rest";
+        reset();
+    }
 }
 
 function increment() {
