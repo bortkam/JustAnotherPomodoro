@@ -6,6 +6,13 @@ var time,
     counterInterval,
     timeToGo;
 
+document.getElementById("workButton").style.backgroundColor = "#cfcfcf";
+
+window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    e.returnValue = '';
+});
+
 function getTimeInSeconds() {
     if (mode === "work") {
         return parseInt(document.getElementById("workTime").innerHTML)*60;
@@ -45,7 +52,7 @@ function pause() {
 function reset() {
     if (isWorking) {
         clearInterval(counterInterval);
-        document.getElementById("workButton").innerHTML="start";
+        document.getElementById("startButton").innerHTML="<img src=\"media/images/play_arrow.svg\" alt=\"start\">";
     }
     isWorking = false;
     
@@ -64,11 +71,11 @@ function start() {
 
     if (isWorking) {
         isWorking = false;
-        document.getElementById("workButton").innerHTML="start";
+        document.getElementById("startButton").innerHTML="<img src=\"media/images/play_arrow.svg\" alt=\"start\">";
         pause();
     } else {
         isWorking = true;
-        document.getElementById("workButton").innerHTML="stop";
+        document.getElementById("startButton").innerHTML="<img src=\"media/images/pause.svg\" alt=\"stop\">";
         //if (timerClear) {
             timerClear = false;
         //}
@@ -79,6 +86,8 @@ function start() {
 function work() {
     if (mode !== "work") {
         mode = "work";
+        document.getElementById("workButton").style.backgroundColor = "#cfcfcf";
+        document.getElementById("restButton").style.backgroundColor = "#fafafa";
         reset();
     } 
 }
@@ -86,6 +95,8 @@ function work() {
 function rest() {
     if (mode !== "rest") {
         mode = "rest";
+        document.getElementById("workButton").style.backgroundColor = "#fafafa";
+        document.getElementById("restButton").style.backgroundColor = "#cfcfcf";
         reset();
     }
 }
@@ -112,7 +123,6 @@ function IncrementDecrement(whatToIncrementDecrement, incrementOrDecrement) {
     if (isWorking === false) {
         reset();
     }
-    
 }
 
 function incrementWork() {

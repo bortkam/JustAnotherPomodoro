@@ -2,9 +2,156 @@
 
 * {
     font-family: "Open Sans", sans-serif;
+    margin: 0px;
+}
+
+html, body {
+    background-image: url(media/images/jonas-verstuyft-fa73YB-Vono-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.prevent-select {
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+  }
+
+button {
+    font-size: 20px;
+    background-color: #fafafa;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#settings {
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #c9c9c9 !important;
+}
+
+button:active {
+    background-color: #a0a0a0 !important;
+}
+
+#pomodoroTimer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.workRestContainer {
+    width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+
+}
+
+#pomodoroContainer {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+}
+
+#placeholder {
+    float: left;
+    width: auto;
 }
 
 #pomodoro {
     font-size: 100px;
     font-weight: bold;
+    text-align: center;
+    color: rgb(48, 48, 48);
 }
+
+.switchButton {
+    width: 50%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.controls {
+    font-size: 0px;
+    float: right;
+    margin-left: 5px;
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  
+  @media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }

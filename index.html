@@ -3,38 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
     <title>Another One Productivity Tool</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="workRestContainer">
+        <a class="button" href="#popup1"><img src="media\images\settings.svg" class="invertSvg" 
+            id="settings" alt="HTML tutorial" style="filter: invert(95%);width:42px;height:42px;"></a>
+    </div>   
+
     <div id="pomodoroTimer">
-        <div class="workRestContainer">
-            <button onclick="work()">work</button>
-            <button onclick="rest()">rest</button>
+        <div class="container">
+            <div class="workRestContainer">
+                <button class="switchButton" id="workButton" onclick="work()">work</button>
+                <button class="switchButton" id="restButton" onclick="rest()">rest</button>
+            </div>
+
+            <div id="pomodoroContainer">
+                <div id="pomodoro">25:00</div>
+            </div>
+            
+            <div class="workRestContainer">
+                <button class="controls" onclick="reset()"><img src="media/images/refresh.svg" alt="reset"></button>
+                <button class="controls" id="startButton" onclick="start()"><img src="media/images/play_arrow.svg" alt="start"></button>
+
+            </div>
+        </div>    
+    </div>
+
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Settings</h2>
+            <br>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+
+                <label>Work time</label>
+                <button onclick="decrementWork()">-</button>
+                <span id="workTime">25</span>
+                <button onclick="incrementWork()">+</button>
+                <br>
+
+                <label>Rest time</label>
+                <div id="placeholder"></div>
+                <button onclick="decrementRest()">-</button>
+                <span id="restTime">5</span>
+                <button onclick="incrementRest()">+</button>
+            </div>
         </div>
-        
-        <div class="workRestContainer">
-            <button onclick="decrementWork()">-</button>
-            <p id="workTime">25</p>
-            <button onclick="incrementWork()">+</button>
-            
-            
-        </div>     
-
-        <button onclick="incrementRest()">+</button><button onclick="decrementRest()">-</button>
-        
-        <p id="restTime">5</p>
-        
-
-
-        <br>
-
-        <div id="pomodoro">25:00</div>
-        
-        <button id="workButton" onclick="start()">start</button>
-        <button id="workButton" onclick="reset()">reset</button>
     </div>
 
 </body>
