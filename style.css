@@ -6,10 +6,10 @@
     -webkit-user-select: none; 
     -ms-user-select: none; 
     user-select: none;
-}
+  }
 
 html, body {
-    background-image: url(media/images/jonas-verstuyft-fa73YB-Vono-unsplash.jpg);
+    background-image: url(media/images/aldrin-rachman-pradana-UEwMB7Z1pKQ-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -35,6 +35,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 button:hover {
@@ -55,6 +56,9 @@ td {
 
 .settings {
   margin: 10px 0px 0px 10px;
+  filter: invert(95%) drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  width:42px;
+  height:42px;
 }
 
 .buttonInSettings {
@@ -99,6 +103,8 @@ td {
   height: 100%;
   float: left;
   box-sizing: border-box;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
 }
 
 #pomodoroTimerContainer {
@@ -108,6 +114,7 @@ td {
     justify-content: center;
     align-items: center;
     background-color: #fafafa;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 #pomodoroTimer {

@@ -10,15 +10,14 @@
 
 <body>
     <div class="buttonContainer">
-        <a href="#popup1" class="button"><img src="media/images/settings.svg" class="settings" 
-            alt="Settings" style="filter: invert(95%);width:42px;height:42px;"></a>
-        <a onclick="toggleFullScreen()" class="button"><img src="media\images\fullscreen.svg" class="settings" 
-            alt="Fullscreen" style="filter: invert(95%);width:42px;height:42px;"></a>
+        <a href="#settingsWindow" class="button"><img src="media/images/settings.svg" 
+            class="settings" alt="Settings"></a>
+        <a onclick="toggleFullScreen()" class="button"><img src="media\images\fullscreen.svg" 
+            class="settings" alt="Fullscreen"></a>
     </div>   
 
     <div id="pomodoroAppContainer">
         <div class="container">
-            
             <div class="buttonContainer">
                 <button class="switchButton" id="workButton" onclick="work()">work</button>
                 <button class="switchButton" id="restButton" onclick="rest()">rest</button>
@@ -32,11 +31,10 @@
                 <button class="controls" onclick="reset()"><img src="media/images/refresh.svg" alt="reset"></button>
                 <button class="controls" id="startButton" onclick="start()"><img src="media/images/play_arrow.svg" alt="start"></button>
             </div>
-
-        </div>    
+        </div>  
     </div>
 
-    <div id="popup1" class="overlay">
+    <div id="settingsWindow" class="overlay">
         <div class="popup">
             <h2>Settings</h2>
             <br>
@@ -81,7 +79,7 @@
     JustAnotherPomodoro made with ❤️ by <a href="https://github.com/miharnas">Michał Bortka</a>, 2023  
 </footer>
 
-<script src="app.js"></script>
-<script src="pomodoro.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/pomodoro.js"></script>
 
 </html>
