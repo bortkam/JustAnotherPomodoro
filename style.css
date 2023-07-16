@@ -8,8 +8,13 @@
   user-select: none;
 }
 
-body, html {
-  animation: fadeInAnimation ease 1s;
+html {
+  background-color: #2f2f2f;
+}
+
+body {
+  background-repeat: ;
+  animation: fadeInAnimation ease 4s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   background: 
