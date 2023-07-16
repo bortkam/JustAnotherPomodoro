@@ -7,10 +7,6 @@
   -ms-user-select: none; 
   user-select: none;
 }
-
-*::-webkit-scrollbar {
-  display: none;
-}
   
 html, body {
   background-image: url(media/images/wallpapers/aldrin-rachman-pradana-UEwMB7Z1pKQ-unsplash.jpg);
