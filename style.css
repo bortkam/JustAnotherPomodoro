@@ -14,9 +14,7 @@ html, body {
     background-size: cover;
     height: 100vh;
     color: black;
-    display: none;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    overflow: hidden;
 }
 
 a:link {
