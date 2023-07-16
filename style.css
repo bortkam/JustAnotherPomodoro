@@ -15,6 +15,12 @@ html, body {
     height: 100vh;
     color: black;
     overflow: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+html, body::-webkit-scrollbar {
+  display: none;
 }
 
 a:link {
