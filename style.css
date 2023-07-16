@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 * {
-    font-family: "Open Sans", sans-serif;
-    margin: 0px;
-    -webkit-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none;
-  }
-
-html, body {
-    background-image: url(media/images/wallpapers/aldrin-rachman-pradana-UEwMB7Z1pKQ-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    color: black;
-    overflow: hidden;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
 }
 
-html, body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
+}
+  
+html, body {
+  background-image: url(media/images/wallpapers/aldrin-rachman-pradana-UEwMB7Z1pKQ-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: black;
+  overflow: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 a:link {
