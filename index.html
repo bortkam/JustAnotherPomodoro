@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Another One Productivity Tool</title>
+    <title>JustAnotherPomodoro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="workRestContainer">
-        <a class="button" href="#popup1"><img src="media\images\settings.svg" class="settings" 
-            alt="HTML tutorial" style="filter: invert(95%);width:42px;height:42px;"></a>
-        <a class="button" onclick="toggleFullScreen()"><img src="media\images\fullscreen.svg" class="settings alt="Fullscreen"
-            style="filter: invert(95%);width:42px;height:42px;"></a>
+    <div class="buttonContainer">
+        <a href="#popup1" class="button"><img src="media/images/settings.svg" class="settings" 
+            alt="Settings" style="filter: invert(95%);width:42px;height:42px;"></a>
+        <a onclick="toggleFullScreen()" class="button"><img src="media\images\fullscreen.svg" class="settings" 
+            alt="Fullscreen" style="filter: invert(95%);width:42px;height:42px;"></a>
     </div>   
 
-    <div id="pomodoroTimer">
+    <div id="pomodoroAppContainer">
         <div class="container">
-            <div class="workRestContainer">
+            
+            <div class="buttonContainer">
                 <button class="switchButton" id="workButton" onclick="work()">work</button>
                 <button class="switchButton" id="restButton" onclick="rest()">rest</button>
             </div>
 
-            <div id="pomodoroContainer">
-                <div id="pomodoro">25:00</div>
+            <div id="pomodoroTimerContainer">
+                <div id="pomodoroTimer">25:00</div>
             </div>
             
-            <div class="workRestContainer">
+            <div class="buttonContainer">
                 <button class="controls" onclick="reset()"><img src="media/images/refresh.svg" alt="reset"></button>
                 <button class="controls" id="startButton" onclick="start()"><img src="media/images/play_arrow.svg" alt="start"></button>
-
             </div>
+
         </div>    
     </div>
 
@@ -62,9 +64,13 @@
             <div id="info">
                 Dead simple pomodoro timer written with plain JS,
                 HTML and CSS. Nothing more, nothing less.
-                Created by Michał Bortka (@miharnas) for educational puropsues.
+                Created by Michał Bortka (@miharnas) for educational purposes.
                 <br><br>
-                <a href="https://unsplash.com/photos/fa73YB-Vono">background image</a> by Jonas Verstuyft
+                <a href="https://unsplash.com/photos/fa73YB-Vono">Background image</a> by Jonas Verstuyft
+                <br>
+                <a href="https://freesound.org/people/bone666138/sounds/198841/">Alarm sound</a> by bone666138
+                <br>
+                <a href="https://fonts.google.com/icons">Material icons</a> by Google
             </div>
         </div>
     </div>

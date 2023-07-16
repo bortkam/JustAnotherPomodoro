@@ -15,10 +15,6 @@ html, body {
     height: 100vh;
 }
 
-#workButton {
-  background-color:#cfcfcf;
-}
-
 footer {
   height: fill;
   float: right;
@@ -31,14 +27,34 @@ footer {
 }
 
 button {
-    font-size: 20px;
-    background-color: #fafafa;
-    border: none;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+  font-size: 20px;
+  background-color: #fafafa;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #c9c9c9 !important;
+}
+
+button:active {
+  background-color: #a0a0a0 !important;
+}
+
+td {
+  min-width: 19px;
+}
+
+#workButton {
+  background-color:#cfcfcf;
+}
+
+.settings {
+  margin: 10px 0px 0px 10px;
 }
 
 .buttonInSettings {
@@ -53,32 +69,12 @@ button {
   color: #fafafa;
 }
 
-td {
-  min-width: 19px;
-}
-
-.settings {
-    margin: 10px 0px 0px 10px;
-}
-
-.timeSettings {
-  text-align: center;
-}
-
 #info {
     text-align: justify;
     text-justify: inter-word;
 }
 
-button:hover {
-    background-color: #c9c9c9 !important;
-}
-
-button:active {
-    background-color: #a0a0a0 !important;
-}
-
-#pomodoroTimer {
+#pomodoroAppContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,14 +87,21 @@ button:active {
     
 }
 
-.workRestContainer {
+.buttonContainer {
     width: 300px;
     height: 40px;
     margin-bottom: 10px;
 
 }
 
-#pomodoroContainer {
+.switchButton {
+  width: 50%;
+  height: 100%;
+  float: left;
+  box-sizing: border-box;
+}
+
+#pomodoroTimerContainer {
     aspect-ratio: 1 / 1;
     display: flex;
     border-radius: 100%;
@@ -107,23 +110,11 @@ button:active {
     background-color: #fafafa;
 }
 
-#placeholder {
-    float: left;
-    width: auto;
-}
-
-#pomodoro {
+#pomodoroTimer {
     font-size: 100px;
     font-weight: bold;
     text-align: center;
     color: rgb(48, 48, 48);
-}
-
-.switchButton {
-    width: 50%;
-    height: 100%;
-    float: left;
-    box-sizing: border-box;
 }
 
 .controls {
@@ -132,6 +123,8 @@ button:active {
     margin-left: 5px;
     border-radius: 100%;
     aspect-ratio: 1 / 1;
+    height: 65px;
+    width: 65px;
 }
 
 

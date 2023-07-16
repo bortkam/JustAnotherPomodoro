@@ -5,13 +5,16 @@ var time,
     isWorking = false,
     counterInterval,
     timeToGo;
+    audio = new Audio('media/sounds/analog-alarm-clock.wav');
 
 window.addEventListener('beforeunload', function (e) {
+    // display alert when exiting website
     e.preventDefault();
     e.returnValue = '';
 });
 
 function getTimeInSeconds() {
+    // gets time in minutes from settings panel, and returns it as seconds
     if (mode === "work") {
         return parseInt(document.getElementById("workTime").innerHTML)*60;
     }
@@ -28,7 +31,8 @@ function changeTimeFormat(timeInSeconds) {
 }
 
 function displayTime() {
-    document.getElementById("pomodoro").innerHTML=changeTimeFormat(timeToGo);
+    let timeInMinutes = document.getElementById("pomodoroTimer").innerHTML=changeTimeFormat(timeToGo);
+    document.title = timeInMinutes+" | "+mode;
 }
 
 function countdown() {
@@ -36,6 +40,7 @@ function countdown() {
         timeToGo--;
         displayTime();
         if (timeToGo == 0) {
+            audio.play();
             clearInterval(counterInterval);
             if (mode === "work") {
                 rest();
@@ -52,16 +57,17 @@ function pause() {
 }
 
 function reset() {
-    if (isWorking) {
+    if (!timerClear) {
         clearInterval(counterInterval);
         document.getElementById("startButton").innerHTML="<img src=\"media/images/play_arrow.svg\" alt=\"start\">";
+        document.title = "JustAnotherPomodoro";
     }
     isWorking = false;
     
     if (mode === "work") {
-        document.getElementById("pomodoro").innerHTML=changeTimeFormat(getTimeInSeconds());
+        document.getElementById("pomodoroTimer").innerHTML=changeTimeFormat(getTimeInSeconds());
     } else {
-        document.getElementById("pomodoro").innerHTML=changeTimeFormat(getTimeInSeconds());
+        document.getElementById("pomodoroTimer").innerHTML=changeTimeFormat(getTimeInSeconds());
     }
     timerClear = true;
 }
