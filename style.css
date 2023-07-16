@@ -13,9 +13,6 @@ html {
 }
 
 body {
-  animation: fadeInAnimation ease 4s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
   background: 
     linear-gradient(
       rgba(0, 0, 0, 0.182), 
@@ -26,17 +23,6 @@ body {
   background-size: cover;
   height: 100vh;
   color: black;
-}
-
-@keyframes fadeInAnimation {
-  0% {
-      backdrop-filter: blur(10px);
-      opacity: 0;
-  }
-  100% {
-      backdrop-filter: blur(0px);
-      opacity: 1;
-  }
 }
 
 a:link {
