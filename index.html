@@ -9,8 +9,10 @@
 
 <body>
     <div class="workRestContainer">
-        <a class="button" href="#popup1"><img src="media\images\settings.svg" class="invertSvg" 
-            id="settings" alt="HTML tutorial" style="filter: invert(95%);width:42px;height:42px;"></a>
+        <a class="button" href="#popup1"><img src="media\images\settings.svg" class="settings" 
+            alt="HTML tutorial" style="filter: invert(95%);width:42px;height:42px;"></a>
+        <a class="button" onclick="toggleFullScreen()"><img src="media\images\fullscreen.svg" class="settings alt="Fullscreen"
+            style="filter: invert(95%);width:42px;height:42px;"></a>
     </div>   
 
     <div id="pomodoroTimer">
@@ -38,24 +40,42 @@
             <br>
             <a class="close" href="#">&times;</a>
             <div class="content">
-
-                <label>Work time</label>
-                <button onclick="decrementWork()">-</button>
-                <span id="workTime">25</span>
-                <button onclick="incrementWork()">+</button>
-                <br>
-
-                <label>Rest time</label>
-                <div id="placeholder"></div>
-                <button onclick="decrementRest()">-</button>
-                <span id="restTime">5</span>
-                <button onclick="incrementRest()">+</button>
+                <table>
+                    <tr>
+                        <td>Work time:</td>
+                        <td><button class="buttonInSettings" onclick="decrementWork()">-</button></td>
+                        <td class="timeSettings"><span id="workTime">25</span></td>
+                        <td><button class="buttonInSettings" onclick="incrementWork()">+</button></td>
+                      </tr>
+                      <tr>
+                        <td>Rest time:</td>
+                        <td><button class="buttonInSettings" onclick="decrementRest()">-</button></td>
+                        <td class="timeSettings"><span id="restTime">5</span></td>
+                        <td><button class="buttonInSettings" onclick="incrementRest()">+</button></td>
+                      </tr>
+                </table>
+            <br>
+            </div>
+            <br>
+            <h2>About project</h2>
+            <br>
+            <div id="info">
+                Dead simple pomodoro timer written with plain JS,
+                HTML and CSS. Nothing more, nothing less.
+                Created by Michał Bortka (@miharnas) for educational puropsues.
+                <br><br>
+                <a href="https://unsplash.com/photos/fa73YB-Vono">background image</a> by Jonas Verstuyft
             </div>
         </div>
     </div>
 
 </body>
 
+<footer>
+    JustAnotherPomodoro made with ❤️ by <a href="https://github.com/miharnas">Michał Bortka</a>, 2023  
+</footer>
+
+<script src="app.js"></script>
 <script src="pomodoro.js"></script>
 
 </html>

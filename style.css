@@ -3,6 +3,9 @@
 * {
     font-family: "Open Sans", sans-serif;
     margin: 0px;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 html, body {
@@ -12,11 +15,20 @@ html, body {
     height: 100vh;
 }
 
-.prevent-select {
-    -webkit-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none;
-  }
+#workButton {
+  background-color:#cfcfcf;
+}
+
+footer {
+  height: fill;
+  float: right;
+  margin: 10px;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color:#fafafa;
+}
 
 button {
     font-size: 20px;
@@ -29,8 +41,33 @@ button {
     font-size: 16px;
 }
 
-#settings {
-    margin: 10px;
+.buttonInSettings {
+  height: 20px;
+  width: 20px;
+  background-color: #333;
+  border-radius: 100%;
+  aspect-ratio: 1 / 1;
+  text-align: center; 
+  margin: auto;
+  display: inline-block;
+  color: #fafafa;
+}
+
+td {
+  min-width: 19px;
+}
+
+.settings {
+    margin: 10px 0px 0px 10px;
+}
+
+.timeSettings {
+  text-align: center;
+}
+
+#info {
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 button:hover {
@@ -45,7 +82,7 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 80vh;
 }
 
 .container {
@@ -96,6 +133,9 @@ button:active {
     border-radius: 100%;
     aspect-ratio: 1 / 1;
 }
+
+
+
 
 
 

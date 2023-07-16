@@ -6,8 +6,6 @@ var time,
     counterInterval,
     timeToGo;
 
-document.getElementById("workButton").style.backgroundColor = "#cfcfcf";
-
 window.addEventListener('beforeunload', function (e) {
     e.preventDefault();
     e.returnValue = '';
@@ -29,10 +27,14 @@ function changeTimeFormat(timeInSeconds) {
     return minutes+":"+extraSeconds;
 }
 
+function displayTime() {
+    document.getElementById("pomodoro").innerHTML=changeTimeFormat(timeToGo);
+}
+
 function countdown() {
     counterInterval = setInterval(() => {
         timeToGo--;
-        document.getElementById("pomodoro").innerHTML=changeTimeFormat(timeToGo);
+        displayTime();
         if (timeToGo == 0) {
             clearInterval(counterInterval);
             if (mode === "work") {
@@ -120,9 +122,9 @@ function IncrementDecrement(whatToIncrementDecrement, incrementOrDecrement) {
         }
     }
     document.getElementById(whatToIncrementDecrement).innerHTML=numberToChange;
-    if (isWorking === false) {
+    //if (isWorking === false) {
         reset();
-    }
+    //}
 }
 
 function incrementWork() {
