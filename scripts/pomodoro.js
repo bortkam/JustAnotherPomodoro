@@ -59,7 +59,7 @@ function pause() {
 function reset() {
     if (!timerClear) {
         clearInterval(counterInterval);
-        document.getElementById("startButton").innerHTML="<img src=\"media/images/play_arrow.svg\" alt=\"start\">";
+        document.getElementById("startButton").innerHTML="<img src=\"media/images//icons/play_arrow.svg\" alt=\"start\">";
         document.title = "JustAnotherPomodoro";
     }
     isWorking = false;
@@ -79,11 +79,11 @@ function start() {
 
     if (isWorking) {
         isWorking = false;
-        document.getElementById("startButton").innerHTML="<img src=\"media/images/play_arrow.svg\" alt=\"start\">";
+        document.getElementById("startButton").innerHTML="<img src=\"media/images/icons/play_arrow.svg\" alt=\"start\">";
         pause();
     } else {
         isWorking = true;
-        document.getElementById("startButton").innerHTML="<img src=\"media/images/pause.svg\" alt=\"stop\">";
+        document.getElementById("startButton").innerHTML="<img src=\"media/images/icons/pause.svg\" alt=\"stop\">";
         //if (timerClear) {
             timerClear = false;
         //}

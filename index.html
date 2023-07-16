@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <div class="buttonContainer">
-        <a href="#settingsWindow" class="button"><img src="media/images/settings.svg" 
-            class="settings" alt="Settings"></a>
-        <a onclick="toggleFullScreen()" class="button"><img src="media\images\fullscreen.svg" 
-            class="settings" alt="Fullscreen"></a>
+    <div>
+        <a href="#settingsWindow" class="button"><img src="media/images/icons/settings.svg" 
+            class="topLeftIcons" alt="Settings"></a>
+        <a onclick="toggleFullScreen()" class="button"><img src="media/images/icons/fullscreen.svg" 
+            class="topLeftIcons" alt="Fullscreen"></a>
     </div>   
 
     <div id="pomodoroAppContainer">
@@ -28,33 +28,32 @@
             </div>
             
             <div class="buttonContainer">
-                <button class="controls" onclick="reset()"><img src="media/images/refresh.svg" alt="reset"></button>
-                <button class="controls" id="startButton" onclick="start()"><img src="media/images/play_arrow.svg" alt="start"></button>
+                <button class="controls" onclick="reset()"><img src="media/images/icons/refresh.svg" alt="reset"></button>
+                <button class="controls" id="startButton" onclick="start()"><img src="media/images/icons/play_arrow.svg" alt="start"></button>
             </div>
         </div>  
     </div>
 
     <div id="settingsWindow" class="overlay">
         <div class="popup">
+            <a class="close" href="#"><img src="media/images/icons/close.svg" style="height: 30px; width: 30px;"></a>
             <h2>Settings</h2>
             <br>
-            <a class="close" href="#">&times;</a>
             <div class="content">
                 <table>
                     <tr>
                         <td>Work time:</td>
                         <td><button class="buttonInSettings" onclick="decrementWork()">-</button></td>
-                        <td class="timeSettings"><span id="workTime">25</span></td>
+                        <td class="timeSettings" id="workTime">25</td>
                         <td><button class="buttonInSettings" onclick="incrementWork()">+</button></td>
                       </tr>
                       <tr>
                         <td>Rest time:</td>
                         <td><button class="buttonInSettings" onclick="decrementRest()">-</button></td>
-                        <td class="timeSettings"><span id="restTime">5</span></td>
+                        <td class="timeSettings" id="restTime">5</td>
                         <td><button class="buttonInSettings" onclick="incrementRest()">+</button></td>
                       </tr>
                 </table>
-            <br>
             </div>
             <br>
             <h2>About project</h2>
@@ -64,11 +63,11 @@
                 HTML and CSS. Nothing more, nothing less.
                 Created by Michał Bortka (@miharnas) for educational purposes.
                 <br><br>
-                <a href="https://unsplash.com/photos/fa73YB-Vono">Background image</a> by Jonas Verstuyft
+                <a href="https://unsplash.com/photos/fa73YB-Vono" class="linksInSettings">Background image</a> by Jonas Verstuyft
                 <br>
-                <a href="https://freesound.org/people/bone666138/sounds/198841/">Alarm sound</a> by bone666138
+                <a href="https://freesound.org/people/bone666138/sounds/198841/" class="linksInSettings">Alarm sound</a> by bone666138
                 <br>
-                <a href="https://fonts.google.com/icons">Material icons</a> by Google
+                <a href="https://fonts.google.com/icons" class="linksInSettings">Material icons</a> by Google
             </div>
         </div>
     </div>
