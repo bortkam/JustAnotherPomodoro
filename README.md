@@ -1,2 +1,2 @@
-# AnotherOneProductivityTool
-Dead simple pomodoro timer with TODO built-in. Nothing more, nothing less
+# JustAnotherPomodoro
+Dead simple pomodoro timer written with plain JS, HTML and CSS. Nothing more, nothing less
