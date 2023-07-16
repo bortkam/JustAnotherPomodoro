@@ -139,7 +139,7 @@ footer {
     right: 0;
     background: #0000008f;
     backdrop-filter: blur(10px);
-    transition: opacity 500ms;
+    transition: opacity 0.5s;
     visibility: hidden;
     opacity: 0;
   }
@@ -180,15 +180,20 @@ td {
 }
 
 .buttonInSettings {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   background-color: #333;
   border-radius: 100%;
   aspect-ratio: 1 / 1;
   text-align: center; 
+  transition: opacity 0.5s;
   margin: auto;
   display: inline-block;
   color: #fafafa;
+}
+
+.timeSettings {
+  text-align: center;
 }
 
 #info {
