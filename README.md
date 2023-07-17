@@ -4,6 +4,11 @@ Simple and beautiful Pomodoro timer made with plain JS, HTML and CSS. **Made for
 
 ![Screenshot of the app](https://raw.githubusercontent.com/miharnas/JustAnotherPomodoro/main/media/images/screenshots/screenshot.png)
 
+# What is pomodoro
+
+The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a kitchen timer to break work into intervals, typically 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for tomato, after the tomato-shaped kitchen timer Cirillo used as a university student. 
+_[via Wikipedia]_
+
 # Functionality
 
 This is just simple pomodoro timer, but I added some nice things:
