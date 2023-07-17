@@ -22,6 +22,7 @@ body {
     ),
     url();
   color: #000000;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -265,9 +266,6 @@ td {
 #info {
     text-align: justify;
     text-justify: inter-word;
-    -webkit-user-select: text; 
-    -ms-user-select: text; 
-    user-select: text;
 }
 
 a.linksInSettings {

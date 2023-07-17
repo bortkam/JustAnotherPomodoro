@@ -135,22 +135,19 @@ function IncrementDecrement(whatToIncrementDecrement, incrementOrDecrement) {
     //}
 }
 
-function incrementWork() {
-    const whatToIncrementDecrement = document.getElementById("workTime").id;
-    IncrementDecrement(whatToIncrementDecrement,"increment");
-}
-
-function decrementWork() {
-    const whatToIncrementDecrement = document.getElementById("workTime").id;
-    IncrementDecrement(whatToIncrementDecrement,"decrement");
-}
-
-function incrementRest() {
-    const whatToIncrementDecrement = document.getElementById("restTime").id;
-    IncrementDecrement(whatToIncrementDecrement,"increment");
-}
-
-function decrementRest() {
-    const whatToIncrementDecrement = document.getElementById("restTime").id;
-    IncrementDecrement(whatToIncrementDecrement,"decrement");
+function buttonsInSettings(clickedButtonID) {
+    switch (clickedButtonID) {
+        case 'incrementWork':
+            IncrementDecrement(document.getElementById("workTime").id,"increment");
+        break;
+        case 'decrementWork':
+            IncrementDecrement(document.getElementById("workTime").id,"decrement");
+        break;
+        case 'incrementRest':
+            IncrementDecrement(document.getElementById("restTime").id,"increment");
+        break;
+        case 'decrementRest':
+            IncrementDecrement(document.getElementById("restTime").id,"decrement");
+        break;
+      }
 }

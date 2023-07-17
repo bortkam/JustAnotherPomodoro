@@ -36,7 +36,7 @@
     </div>
 
     <div id="footer">
-        JustAnotherPomodoro made by <a href="https://github.com/miharnas">Michał Bortka</a>, 2023  
+        <a href="https://miharnas.github.io/JustAnotherPomodoro/">JustAnotherPomodoro</a> made by <a href="https://github.com/miharnas">Michał Bortka</a>, 2023  
     </div>
 
     <div id="settingsWindow" class="overlay">
@@ -48,15 +48,15 @@
                 <table>
                     <tr>
                         <td>Work time:</td>
-                        <td><button class="buttonInSettings" onclick="decrementWork()">−</button></td>
+                        <td><button class="buttonInSettings" id="decrementWork" onclick="buttonsInSettings(this.id)">−</button></td>
                         <td class="timeSettings" id="workTime">25</td>
-                        <td><button class="buttonInSettings" onclick="incrementWork()">+</button></td>
+                        <td><button class="buttonInSettings" id="incrementWork" onclick="buttonsInSettings(this.id)">+</button></td>
                       </tr>
                       <tr>
                         <td>Rest time:</td>
-                        <td><button class="buttonInSettings" onclick="decrementRest()">−</button></td>
+                        <td><button class="buttonInSettings" id="decrementRest" onclick="buttonsInSettings(this.id)">−</button></td>
                         <td class="timeSettings" id="restTime">5</td>
-                        <td><button class="buttonInSettings" onclick="incrementRest()">+</button></td>
+                        <td><button class="buttonInSettings" id="incrementRest" onclick="buttonsInSettings(this.id)">+</button></td>
                       </tr>
                 </table>
             </div>
@@ -69,7 +69,7 @@
                 HTML and CSS. Nothing more, nothing less.
                 Created by Michał Bortka (@miharnas) for educational purposes.
                 <br><br>
-                <a href="https://unsplash.com/photos/fa73YB-Vono" class="linksInSettings">Background image</a> by Jonas Verstuyft
+                <a id="wallpaperLink" href="" class="linksInSettings">Background image</a> by <span id="wallpaperAuthor"></span>
                 <br>
                 <a href="https://freesound.org/people/bone666138/sounds/198841/" class="linksInSettings">Alarm sound</a> by bone666138
                 <br>
