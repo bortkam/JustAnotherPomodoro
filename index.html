@@ -2,38 +2,40 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustAnotherPomodoro</title>
-    <link rel="icon" type="image/x-icon" href="media/images/icons/favicon.png">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JustAnotherPomodoro</title>
+  <link rel="icon" type="image/x-icon" href="media/images/icons/favicon.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="randomizeWallpaper()">
-    <div>
-        <a href="#settingsWindow" class="button"><img src="media/images/icons/settings.svg" 
-            class="topLeftIcons" alt="Settings"></a>
-        <a onclick="toggleFullScreen()" class="button"><img src="media/images/icons/fullscreen.svg" 
-            class="topLeftIcons" alt="Fullscreen"></a>
-    </div>   
+  <div>
+    <a href="#settingsWindow" class="button"><img src="media/images/icons/settings.svg" 
+      class="topLeftIcons" alt="Settings"></a>
+    <a onclick="toggleFullScreen()" class="button"><img src="media/images/icons/fullscreen.svg" 
+      class="topLeftIcons" alt="Fullscreen"></a>
+  </div>   
 
-    <div id="pomodoroAppContainer">
-        <div class="container">
-            <div class="buttonContainer">
-                <button class="switchButton" id="workButton" onclick="work()">work</button>
-                <button class="switchButton" id="restButton" onclick="rest()">rest</button>
-            </div>
-
-            <div id="pomodoroTimerContainer">
-                <div id="pomodoroTimer">25:00</div>
-            </div>
-            
-            <div class="buttonContainer">
-                <button class="controls" id="resetButton" onclick="reset()"><img src="media/images/icons/refresh.svg" alt="reset"></button>
-                <button class="controls" id="startButton" onclick="start()"><img src="media/images/icons/play_arrow.svg" alt="start"></button>
-            </div>
-        </div>  
-    </div>
+  <div id="pomodoroAppContainer">
+    <div class="container">
+      <div class="buttonContainer">
+        <button class="switchButton" id="workButton" onclick="work()">work</button>
+        <button class="switchButton" id="restButton" onclick="rest()">rest</button>
+      </div>
+        <div id="pomodoroTimerContainer">
+          <div id="pomodoroTimer">25:00</div>
+      </div>
+      <div class="buttonContainer">
+        <button class="controls" id="resetButton" onclick="reset()">
+          <img id="resetButtonImage" src="media/images/icons/refresh.svg" alt="reset">
+        </button>
+        <button class="controls" id="startButton" onclick="start()">
+          <img id="startButtonImage" src="media/images/icons/play_arrow.svg" alt="start/pause">
+        </button>
+      </div>
+    </div>  
+  </div>
 
     <div id="footer">
         <a href="https://github.com/miharnas/JustAnotherPomodoro">JustAnotherPomodoro</a> made by <a href="https://github.com/miharnas">Michał Bortka</a>, 2023  
