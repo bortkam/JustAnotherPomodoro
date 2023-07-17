@@ -11,6 +11,7 @@ This is just simple pomodoro timer, but I added some nice things:
  - Fullscreen button (mostly for mobile devices)
  - Responsive design - It will **Probably** work on all types of screens
  - Customizable work and rest times
+ - Time displaying in the browser tab
 
 # Credits
 
