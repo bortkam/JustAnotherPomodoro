@@ -10,7 +10,7 @@ This is just simple pomodoro timer, but I added some nice things:
  - Random **beautiful** wallpapers
  - Fullscreen button (mostly for mobile devices)
  - Responsive design - It will **Probably** work on all types of screens
- - Custom work and rest time
+ - Customizable work and rest times
 
 # Credits
 
