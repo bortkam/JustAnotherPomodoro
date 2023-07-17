@@ -18,4 +18,4 @@ You can find all the links in justAnotherPomodoro's settings
 
 # Commits
 
-This repo is public because I'm hosting it on the Github Pages. As I said above, this project is for educational purposes only. If you want to help, you can just leave feedback. I would be very grateful.
+This repo is public because I'm hosting it on the Github Pages. As I said above, this project is for educational purposes. If you want to help, you can just leave feedback. I would be very grateful.
