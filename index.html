@@ -29,7 +29,7 @@
             </div>
             
             <div class="buttonContainer">
-                <button class="controls" onclick="reset()"><img src="media/images/icons/refresh.svg" alt="reset"></button>
+                <button class="controls" id="resetButton" onclick="reset()"><img src="media/images/icons/refresh.svg" alt="reset"></button>
                 <button class="controls" id="startButton" onclick="start()"><img src="media/images/icons/play_arrow.svg" alt="start"></button>
             </div>
         </div>  
@@ -58,9 +58,9 @@
             </div>
 
             <br>
+            <div id="info">
             <h2>About project</h2>
             <br>
-            <div id="info">
                 Dead simple pomodoro timer written with plain JS,
                 HTML and CSS. Nothing more, nothing less.
                 Created by Michał Bortka (@miharnas) for educational purposes.

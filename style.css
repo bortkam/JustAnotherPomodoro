@@ -21,8 +21,12 @@ body {
       rgba(0, 0, 0, 0.182)
     ),
     url();
-  height: 100vh;
   color: #000000;
+}
+
+html, body {
+  min-height: 100%;
+  height: 100%;
 }
 
 a:link {
@@ -134,7 +138,40 @@ button:active {
 }
 
 /* footer */
+@media screen and (max-height: 550px) {
+  #pomodoroTimerContainer {
+    padding: 20px;
+  }
+  
+  #pomodoroTimer {
+    font-size: 70px;
+  }
+
+  .container {
+    flex-direction: row;
+  }
+
+  #pomodoroAppContainer {
+    width: 100%;
+  }
+  .buttonContainer {
+    width: 150px;
+    height: 40px;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  #workButton {
+    background-color:#cfcfcf;
+  }
+
+  #restButton {
+    margin: px;
+  }
+}
+
 #footer {
+  margin-top: auto;
   height: fill;
   float: right;
   margin: 10px;
@@ -180,8 +217,15 @@ button:active {
   right: 30px;
   transition: opacity 0.6s;
 }
+
+.box {
+  overflow: auto;
+}
   
 @media screen and (max-width: 800px) {
+  #footer {
+    display: none;
+  }
   .box{
     width: 70%;
   }
