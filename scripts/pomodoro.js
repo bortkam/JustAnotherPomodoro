@@ -1,6 +1,6 @@
 const minuteDurationInSeconds = 60;
 var time,
-    timerClear = true,
+    isTimerClear = true,
     mode = "work",
     isWorking = false,
     counterInterval,
@@ -59,7 +59,7 @@ function pause() {
 }
 
 function reset() {
-    if (!timerClear) {
+    if (!isTimerClear) {
         clearInterval(counterInterval);
         document.getElementById("startButton").innerHTML="<img src=\"media/images//icons/play_arrow.svg\" alt=\"start\">";
         document.title = "JustAnotherPomodoro";
@@ -71,11 +71,11 @@ function reset() {
     } else {
         document.getElementById("pomodoroTimer").innerHTML=changeTimeFormat(getTimeInSeconds());
     }
-    timerClear = true;
+    isTimerClear = true;
 }
 
 function start() {
-    if (timerClear === true) {
+    if (isTimerClear === true) {
         timeToGo = getTimeInSeconds();
     }
 
@@ -86,8 +86,8 @@ function start() {
     } else {
         isWorking = true;
         document.getElementById("startButton").innerHTML="<img src=\"media/images/icons/pause.svg\" alt=\"stop\">";
-        //if (timerClear) {
-            timerClear = false;
+        //if (isTimerClear) {
+            isTimerClear = false;
         //}
         countdown();
     }
