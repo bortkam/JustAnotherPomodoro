@@ -14,7 +14,7 @@ This is just simple pomodoro timer, but I added some nice things:
 
 # Credits
 
-You can find all the links in justAnotherPomodoro's settings
+You can find all the links in JustAnotherPomodoro's settings.
 
 # Commits
 
