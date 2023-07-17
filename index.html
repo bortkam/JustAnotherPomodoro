@@ -2,85 +2,105 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JustAnotherPomodoro</title>
-  <link rel="icon" type="image/x-icon" href="media/images/icons/favicon.png">
-  <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JustAnotherPomodoro</title>
+	<link rel="icon" type="image/x-icon" href="media/images/icons/favicon.png">
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="randomizeWallpaper()">
-  <div>
-    <a href="#settingsWindow" class="button"><img src="media/images/icons/settings.svg" 
-      class="topLeftIcons" alt="Settings"></a>
-    <a onclick="toggleFullScreen()" class="button"><img src="media/images/icons/fullscreen.svg" 
-      class="topLeftIcons" alt="Fullscreen"></a>
-  </div>   
 
-  <div id="pomodoroAppContainer">
-    <div class="container">
-      <div class="buttonContainer">
-        <button class="switchButton" id="workButton" onclick="work()">work</button>
-        <button class="switchButton" id="restButton" onclick="rest()">rest</button>
-      </div>
-        <div id="pomodoroTimerContainer">
-          <div id="pomodoroTimer">25:00</div>
-      </div>
-      <div class="buttonContainer">
-        <button class="controls" id="resetButton" onclick="reset()">
-          <img id="resetButtonImage" src="media/images/icons/refresh.svg" alt="reset">
-        </button>
-        <button class="controls" id="startButton" onclick="start()">
-          <img id="startButtonImage" src="media/images/icons/play_arrow.svg" alt="start/pause">
-        </button>
-      </div>
-    </div>  
-  </div>
+	<div>
+		<a href="#settingsWindow" class="button"><img src="media/images/icons/settings.svg" 
+			class="topLeftIcons" alt="Settings"></a>
+		<a onclick="toggleFullScreen()" class="button"><img src="media/images/icons/fullscreen.svg" 
+			class="topLeftIcons" alt="Fullscreen"></a>
+	</div>   
 
-    <div id="footer">
-        <a href="https://github.com/miharnas/JustAnotherPomodoro">JustAnotherPomodoro</a> made by <a href="https://github.com/miharnas">Michał Bortka</a>, 2023  
-    </div>
+	<div id="pomodoroAppContainer">
 
-    <div id="settingsWindow" class="overlay">
-        <div class="popup">
-            <a class="close" href="#"><img src="media/images/icons/close.svg" style="height: 30px; width: 30px;"></a>
-            <h2>Settings</h2>
-            <br>
-            <div class="content">
-                <table>
-                    <tr>
-                        <td>Work time:</td>
-                        <td><button class="buttonInSettings" id="decrementWork" onclick="buttonsInSettings(this.id)">−</button></td>
-                        <td class="timeSettings" id="workTime">25</td>
-                        <td><button class="buttonInSettings" id="incrementWork" onclick="buttonsInSettings(this.id)">+</button></td>
-                      </tr>
-                      <tr>
-                        <td>Rest time:</td>
-                        <td><button class="buttonInSettings" id="decrementRest" onclick="buttonsInSettings(this.id)">−</button></td>
-                        <td class="timeSettings" id="restTime">5</td>
-                        <td><button class="buttonInSettings" id="incrementRest" onclick="buttonsInSettings(this.id)">+</button></td>
-                      </tr>
-                </table>
-            </div>
+		<div class="container">
+			<div class="buttonContainer">
+				<button class="switchButton" id="workButton" onclick="work()">Work</button>
+				<button class="switchButton" id="restButton" onclick="rest()">Rest</button>
+			</div>
 
-            <br>
-            <div id="info">
-            <h2>About project</h2>
-            <br>
-                Dead simple pomodoro timer written with plain JS,
-                HTML and CSS. Nothing more, nothing less.
-                Created by Michał Bortka (@miharnas) for educational purposes.
-                <br><br>
-                <a id="wallpaperLink" href="" class="linksInSettings">Background image</a> by <span id="wallpaperAuthor"></span>
-                <br>
-                <a href="https://freesound.org/people/bone666138/sounds/198841/" class="linksInSettings">Alarm sound</a> by bone666138
-                <br>
-                <a href="https://www.flaticon.com/free-icon/tomato_1054111?term=tomato&page=1&position=53&origin=tag&related_id=1054111" class="linksInSettings">Favicon</a> by Flaticon
-                <br>
-                <a href="https://fonts.google.com/icons" class="linksInSettings">Material icons</a> by Google
-            </div>
-        </div>
-    </div>
+			<div id="pomodoroTimerContainer">
+				<div id="pomodoroTimer">25:00</div>
+			</div>
+
+			<div class="buttonContainer">
+				<button class="controls" id="resetButton" onclick="reset()">
+					<img id="resetButtonImage" src="media/images/icons/refresh.svg" alt="reset">
+				</button>
+				<button class="controls" id="startButton" onclick="start()">
+					<img id="startButtonImage" src="media/images/icons/play_arrow.svg" alt="start/pause">
+				</button>
+			</div>
+		</div>  
+
+	</div>
+
+	<div id="footer">
+		<a href="https://github.com/miharnas/JustAnotherPomodoro">JustAnotherPomodoro</a>
+			made by <a href="https://github.com/miharnas">Michał Bortka</a>, 2023 
+	</div>
+
+	<div id="settingsWindow" class="overlay">
+		<div class="popup">
+			<a class="close" href="#"><img src="media/images/icons/close.svg" 
+				style="height: 30px; width: 30px;"></a>
+			
+			<div class="settings">
+				<h2>Settings</h2>
+				<br>
+				<table>
+					<tr>
+						<td>Work time:</td>
+						<td><button class="buttonInSettings" id="decrementWork" 
+							onclick="buttonsInSettings(this.id)">−</button></td>
+						<td class="timeSettings" id="workTime">25</td>
+						<td><button class="buttonInSettings" id="incrementWork" 
+							onclick="buttonsInSettings(this.id)">+</button></td>
+					</tr>
+					<tr>
+						<td>Rest time:</td>
+						<td><button class="buttonInSettings" id="decrementRest" 
+							onclick="buttonsInSettings(this.id)">−</button></td>
+						<td class="timeSettings" id="restTime">5</td>
+						<td><button class="buttonInSettings" id="incrementRest" 
+							onclick="buttonsInSettings(this.id)">+</button></td>
+					</tr>
+				</table>
+			</div>
+
+			<br>
+			<div id="info">
+				<h2>About project</h2>
+				<br>
+					Dead simple pomodoro timer written with plain JS,
+					HTML and CSS. Nothing more, nothing less.
+					Created by Michał Bortka (@miharnas) for educational purposes.
+				<br><br>
+				<a id="wallpaperLink" href="" 
+					class="linksInSettings">Background image</a> by <span id=
+					"wallpaperAuthor"></span>
+				<br>
+				<a href="https://freesound.org/people/bone666138/sounds/198841/" 
+					class="linksInSettings">Alarm sound</a> by bone666138
+				<br>
+				<a href="https://www.flaticon.com/free-icon/tomato_1054111?term=
+					tomato&page=1&position=53&origin=tag&related_id=1054111" 
+					class="linksInSettings">Favicon</a> by Flaticon
+				<br>
+				<a href="https://fonts.google.com/icons" 
+					class="linksInSettings">Material icons</a> by Google
+			</div>
+
+		</div>
+	</div>
+
 </body>
 
 <script src="scripts/app.js"></script>
