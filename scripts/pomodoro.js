@@ -130,9 +130,9 @@ function IncrementDecrement(whatToIncrementDecrement, incrementOrDecrement) {
         }
     }
     document.getElementById(whatToIncrementDecrement).innerHTML=numberToChange;
-    //if (isWorking === false) {
+    if (isWorking === false) {
         reset();
-    //}
+    }
 }
 
 function buttonsInSettings(clickedButtonID) {

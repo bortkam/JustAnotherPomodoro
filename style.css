@@ -6,6 +6,7 @@
   -webkit-user-select: none; 
   -ms-user-select: none; 
   user-select: none;
+
 }
 
 html {
@@ -104,6 +105,11 @@ button:active {
   box-shadow: 0 3px 10px #00000033;
 }
 
+.controls, .switchButton {
+  animation: none !important;
+  transition: none !important;
+}
+
 #workButton {
   background-color:#cfcfcf;
   border-radius: 10px 0 0 10px;
@@ -168,15 +174,25 @@ button:active {
   #pomodoroAppContainer {
     width: 100%;
   }
+
   .buttonContainer {
-    width: 150px;
+    width: 70px;
     height: 40px;
-    flex-direction: column;
-    margin-bottom: 10px;
+  }
+
+  #resetButton {
+    margin-bottom: 90px;
   }
 
   #workButton {
-    background-color:#cfcfcf;
+    width: 100%;
+    margin-bottom: 140px;
+    border-radius: 10px;
+  }
+
+  #restButton {
+    width: 100%;
+    border-radius: 10px;
   }
 }
 
