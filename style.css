@@ -22,7 +22,7 @@ body {
     ),
     url();
   height: 100vh;
-  color: black;
+  color: #000000;
 }
 
 a:link {
@@ -55,23 +55,11 @@ button {
 
 button:hover {
   background-color: #c9c9c9 !important;
-  transition: opacity 500ms;
+  transition: opacity 0.5s;
 }
 
 button:active {
   background-color: #a0a0a0 !important;
-}
-
-footer {
-  height: fill;
-  float: right;
-  margin: 10px;
-  font-size: 13px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  color:#fafafa;
-  text-shadow: 0px 2px 2px #000000;
 }
 
 .topLeftIcons {
@@ -106,7 +94,7 @@ footer {
   height: 100%;
   float: left;
   box-sizing: border-box;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  box-shadow: 0 3px 10px #00000033;
 }
 
 #workButton {
@@ -118,7 +106,6 @@ footer {
   border-radius: 0px 10px 10px 0px;
 }
 
-
 #pomodoroTimerContainer {
     aspect-ratio: 1 / 1;
     display: flex;
@@ -126,7 +113,7 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: #fafafa;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    box-shadow: 0 3px 10px #00000033;
 }
 
 #pomodoroTimer {
@@ -144,6 +131,19 @@ footer {
     aspect-ratio: 1 / 1;
     height: 65px;
     width: 65px;
+}
+
+/* footer */
+#footer {
+  height: fill;
+  float: right;
+  margin: 10px;
+  font-size: 13px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color:#fafafa;
+  text-shadow: 0px 2px 2px #000000;
 }
 
 /* settings window */
@@ -198,7 +198,7 @@ td {
 .buttonInSettings {
   height: 25px;
   width: 25px;
-  background-color: #333;
+  background-color: #333333;
   border-radius: 100%;
   aspect-ratio: 1 / 1;
   text-align: center; 
