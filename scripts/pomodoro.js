@@ -8,9 +8,11 @@ var time,
     audio = new Audio('media/sounds/analog-alarm-clock.wav');
 
 window.addEventListener('beforeunload', function (e) {
-    // display alert when exiting website
-    e.preventDefault();
-    e.returnValue = '';
+    if (isWorking) {
+        // display alert when exiting website
+        e.preventDefault();
+        e.returnValue = '';
+    }
 });
 
 function getTimeInSeconds() {

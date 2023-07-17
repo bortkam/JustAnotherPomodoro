@@ -10,6 +10,8 @@
 
 html {
   background-color: #2f2f2f;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body {
@@ -19,8 +21,6 @@ body {
       rgba(0, 0, 0, 0.182)
     ),
     url();
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 100vh;
   color: black;
 }
@@ -66,7 +66,7 @@ footer {
   height: fill;
   float: right;
   margin: 10px;
-  font-size: 14px;
+  font-size: 13px;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -111,7 +111,13 @@ footer {
 
 #workButton {
   background-color:#cfcfcf;
+  border-radius: 10px 0px 0px 10px;
 }
+
+#restButton {
+  border-radius: 0px 10px 10px 0px;
+}
+
 
 #pomodoroTimerContainer {
     aspect-ratio: 1 / 1;
