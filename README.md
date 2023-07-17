@@ -1,6 +1,6 @@
 # JustAnotherPomodoro
 
-Simple and beautiful Pomodoro timer made with plain JS, HTML and CSS. **Made for educational purposes mostly.** This software has no warranty, so if alarm sound won't play and you lost you precious brake time, don't blame me.
+Simple and beautiful Pomodoro timer made with plain JS, HTML and CSS. **Made for educational purposes mostly.** This software has no warranty, so if alarm sound won't play and you lost your precious brake time, don't blame me.
 ![enter image description here](https://raw.githubusercontent.com/miharnas/JustAnotherPomodoro/main/media/images/screenshots/screenshot.png)
 
 # Functionality
