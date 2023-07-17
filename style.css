@@ -2,7 +2,7 @@
 
 * {
   font-family: "Open Sans", sans-serif;
-  margin: 0px;
+  margin: 0;
   -webkit-user-select: none; 
   -ms-user-select: none; 
   user-select: none;
@@ -27,6 +27,8 @@ body {
 html, body {
   min-height: 100%;
   height: 100%;
+  width: 100%;
+  min-width: 100%;
 }
 
 a:link {
@@ -46,7 +48,6 @@ a:active {
 }
 
 button {
-  font-size: 20px;
   background-color: #fafafa;
   border: none;
   text-align: center;
@@ -67,7 +68,7 @@ button:active {
 }
 
 .topLeftIcons {
-  margin: 10px 0px 0px 10px;
+  margin: 10px 0 0 10px;
   filter: invert(95%) drop-shadow(0px 3px 5px rgb(0 0 0 / 0.4));
   width:42px;
   height:42px;
@@ -79,7 +80,8 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 80%;
+  min-width: 0;
 }
 
 .container {
@@ -103,11 +105,11 @@ button:active {
 
 #workButton {
   background-color:#cfcfcf;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 0 0 10px;
 }
 
 #restButton {
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 0 10px 10px 0;
 }
 
 #pomodoroTimerContainer {
@@ -128,7 +130,7 @@ button:active {
 }
 
 .controls {
-    font-size: 0px;
+    font-size: 0;
     float: right;
     margin-left: 5px;
     border-radius: 100%;
@@ -138,7 +140,18 @@ button:active {
 }
 
 /* footer */
+
+@media screen and (max-height: 350px) {
+  #footer {
+    display: none;
+  }
+}
+
 @media screen and (max-height: 550px) {
+  #info {
+    display: none;
+  }
+
   #pomodoroTimerContainer {
     padding: 20px;
   }
@@ -164,10 +177,6 @@ button:active {
   #workButton {
     background-color:#cfcfcf;
   }
-
-  #restButton {
-    margin: px;
-  }
 }
 
 #footer {
@@ -180,7 +189,7 @@ button:active {
   bottom: 0;
   right: 0;
   color:#fafafa;
-  text-shadow: 0px 2px 2px #000000;
+  text-shadow: 0 2px 2px #000000;
 }
 
 /* settings window */
@@ -221,16 +230,13 @@ button:active {
 .box {
   overflow: auto;
 }
-  
+
 @media screen and (max-width: 800px) {
-  #footer {
-    display: none;
-  }
   .box{
-    width: 70%;
+    width: 75%;
   }
   .popup{
-    width: 70%;
+    width: 75%;
   }
 }
 
