@@ -22,12 +22,7 @@ html {
 }
 
 body {
-	background: 
-		linear-gradient(
-			rgba(0, 0, 0, 0.182), 
-			rgba(0, 0, 0, 0.182)
-		),
-		url();
+	background: rgba(0, 0, 0, 0.182) url();
 	color: #000000;
 	box-sizing: border-box;
 }
@@ -144,6 +139,11 @@ button:active {
 }
 
 @media screen and (max-height: 550px) {
+	.topLeftIcons {
+		width: 30px;
+		height: 30px;
+	}
+
 	#info {
 		display: none;
 	}
@@ -181,27 +181,6 @@ button:active {
 	#restButton {
 		width: 100%;
 		border-radius: 10px;
-	}
-}
-
-/* footer */
-
-#footer {
-	margin-top: auto;
-	height: fill;
-	float: right;
-	margin: 10px;
-	font-size: 13px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	color:#fafafa;
-	text-shadow: 0 2px 2px #000000;
-}
-
-@media screen and (max-height: 350px) {
-	#footer {
-		display: none;
 	}
 }
 
