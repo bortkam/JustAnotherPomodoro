@@ -9,16 +9,17 @@
 }
 
 html, body {
-	min-height: 300px;
-  	min-width: 150px;
 	height: 100%;
 	width: 100%;
+	overflow-y: auto;
 }
 
 html {
 	background-color: #2f2f2f;
 	background-repeat: no-repeat;
 	background-size: cover;
+	display: flex;
+	flex-direction: column;
 }
 
 body {
@@ -138,52 +139,6 @@ button:active {
 		width: 65px;
 }
 
-@media screen and (max-height: 550px) {
-	.topLeftIcons {
-		width: 30px;
-		height: 30px;
-	}
-
-	#info {
-		display: none;
-	}
-
-	#pomodoroTimerContainer {
-		padding: 20px;
-	}
-	
-	#pomodoroTimer {
-		font-size: 60px;
-	}
-
-	.container {
-		flex-direction: row;
-	}
-
-	#pomodoroAppContainer, #workButton {
-		width: 100%;
-	}
-
-	.buttonContainer {
-		width: 70px;
-		height: 40px;
-	}
-
-	#resetButton {
-		margin-bottom: 65px;
-	}
-
-	#workButton {
-		margin-bottom: 115px;
-		border-radius: 10px;
-	}
-
-	#restButton {
-		width: 100%;
-		border-radius: 10px;
-	}
-}
-
 /* settings window */
 
 .overlay {
@@ -220,13 +175,8 @@ button:active {
 	transition: opacity 0.6s;
 }
 
-@media screen and (max-width: 800px) {
-	.popup{
-		width: 75%;
-	}
-}
-
 /* Items in settings */
+
 td {
 	min-width: 19px;
 }
@@ -255,4 +205,58 @@ td {
 
 a.linksInSettings {
 	color: #000000;
+}
+
+/* responsive design */
+
+@media screen and (max-height: 550px) {
+	.topLeftIcons {
+		width: 30px;
+		height: 30px;
+	}
+
+	#pomodoroTimerContainer {
+		padding: 20px;
+	}
+	
+	#pomodoroTimer {
+		font-size: 60px;
+	}
+
+	.container {
+		flex-direction: row;
+	}
+
+	#pomodoroAppContainer, #workButton {
+		width: 100%;
+	}
+
+	.buttonContainer {
+		width: 70px;
+		height: 40px;
+	}
+
+	#resetButton {
+		margin-bottom: 65px;
+	}
+
+	#workButton {
+		margin-bottom: 115px;
+		border-radius: 10px;
+	}
+
+	#restButton {
+		width: 100%;
+		border-radius: 10px;
+	}
+
+	#info {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.popup{
+		width: 65%;
+	}
 }
