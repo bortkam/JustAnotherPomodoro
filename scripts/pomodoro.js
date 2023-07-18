@@ -115,7 +115,7 @@ function rest() {
 	}
 }
 
-function IncrementDecrement(whatToIncrementDecrement, incrementOrDecrement) {
+function incrementDecrement(whatToIncrementDecrement, incrementOrDecrement) {
 	let numberToChange;
 
 	if (whatToIncrementDecrement === "workTime") {
@@ -142,16 +142,16 @@ function IncrementDecrement(whatToIncrementDecrement, incrementOrDecrement) {
 function buttonsInSettings(clickedButtonID) {
 	switch (clickedButtonID) {
 		case 'incrementWork':
-			IncrementDecrement(document.getElementById("workTime").id,"increment");
+			incrementDecrement(document.getElementById("workTime").id,"increment");
 			break;
 		case 'decrementWork':
-			IncrementDecrement(document.getElementById("workTime").id,"decrement");
+			incrementDecrement(document.getElementById("workTime").id,"decrement");
 			break;
 		case 'incrementRest':
-			IncrementDecrement(document.getElementById("restTime").id,"increment");
+			incrementDecrement(document.getElementById("restTime").id,"increment");
 			break;
 		case 'decrementRest':
-			IncrementDecrement(document.getElementById("restTime").id,"decrement");
+			incrementDecrement(document.getElementById("restTime").id,"decrement");
 			break;
 	}
 }
