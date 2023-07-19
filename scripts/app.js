@@ -51,6 +51,14 @@ const wallpapers = [
 	},
 ]
 
+window.addEventListener('beforeunload', function (e) {
+	if (isWorking) {
+		// display alert when exiting website while clock is counting
+		e.preventDefault();
+		e.returnValue = '';
+	}
+});
+
 function toggleFullScreen() {
 	if (!document.fullscreenElement) {
 		document.documentElement.requestFullscreen();

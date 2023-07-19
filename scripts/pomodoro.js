@@ -1,25 +1,59 @@
 var time,
 	isTimerClear = true,
-	mode = "work",
 	isWorking = false,
+	mode = "work",
 	counterInterval,
 	timeToGo;
+	workTime;
+	restTime;
 	audio = new Audio('media/sounds/analog-alarm-clock.wav');
+	
+function setCookie() {
+	document.cookie = "workTime=25";
+  document.cookie = "restTime=5";
+}
 
-window.addEventListener('beforeunload', function (e) {
-	if (isWorking) {
-		// display alert when exiting website while clock is counting
-		e.preventDefault();
-		e.returnValue = '';
+function updateCookie() {
+	document.cookie = "workTime="+workTime;
+  document.cookie = "restTime="+restTime;
+}
+
+function checkCookie() {
+	if (document.cookie.length === 0) {
+		alert("This site is using cookies to store information. Clicking the button in this notification is consent to save cookies on the device");
+		setCookie();
 	}
-});
+} 
+
+function getCookie(name) {
+	let cookieArr;
+	cookieArr = document.cookie.split(";");
+		for(let i = 0; i < cookieArr.length; i++) {
+		let cookieVariable;
+		cookieArr[i] = cookieArr[i].replace(/ /g,'');
+		let equalSymbolIndex = cookieArr[i].indexOf("=");
+		let cookieName = cookieArr[i].slice(0,equalSymbolIndex);
+		if (cookieName === name) {
+			cookieVariable = cookieArr[i].slice(equalSymbolIndex+1,);
+			return cookieVariable;
+		}
+	}
+}
+
+function initializeValuesFromCookies() {
+	checkCookie();
+	workTime = getCookie("workTime");
+	restTime = getCookie("restTime");
+	document.getElementById("workTime").innerHTML = workTime;
+	document.getElementById("restTime").innerHTML = restTime;
+}
 
 function getTimeInSeconds() {
 	// gets time in minutes from settings panel, and returns it as seconds
 	if (mode === "work") {
-		return parseInt(document.getElementById("workTime").innerHTML)*60;
+		return workTime*60;
 	}
-	return parseInt(document.getElementById("restTime").innerHTML)*60;
+	return restTime*60;
 }
 
 function changeTimeFormat(timeInSeconds) { 
@@ -29,6 +63,12 @@ function changeTimeFormat(timeInSeconds) {
 	minutes = minutes < 10 ? "0" + minutes : minutes;
 	extraSeconds = extraSeconds < 10 ? "0" + extraSeconds : extraSeconds;
 	return minutes+":"+extraSeconds;
+}
+
+function initializeTime() {
+	let time = getTimeInSeconds(workTime);
+	document.getElementById("pomodoroTimer").innerHTML
+		= changeTimeFormat(time);
 }
 
 function displayTime() {
@@ -79,10 +119,9 @@ function reset() {
 }
 
 function start() {
-	if (isTimerClear === true) {
+	if (isTimerClear) {
 		timeToGo = getTimeInSeconds();
 	}
-
 	if (isWorking) {
 		isWorking = false;
 		document.getElementById("startButtonImage").src = 
@@ -115,6 +154,7 @@ function rest() {
 	}
 }
 
+/*
 function incrementDecrement(whatToIncrementDecrement, incrementOrDecrement) {
 	let numberToChange;
 
@@ -138,20 +178,56 @@ function incrementDecrement(whatToIncrementDecrement, incrementOrDecrement) {
 		reset();
 	}
 }
+*/
 
+//TODO: GET RID OF THIS MONSTROSITY!
 function buttonsInSettings(clickedButtonID) {
 	switch (clickedButtonID) {
 		case 'incrementWork':
-			incrementDecrement(document.getElementById("workTime").id,"increment");
+			if (workTime > 58) {
+				return 0;
+			}
+			workTime++;
+			document.getElementById("workTime").innerHTML = workTime;
+			if (!isWorking) {
+				reset();
+			}
 			break;
 		case 'decrementWork':
-			incrementDecrement(document.getElementById("workTime").id,"decrement");
+			if (workTime < 2) {
+				return 0;
+			}
+			workTime--;
+			document.getElementById("workTime").innerHTML = workTime;
+			if (!isWorking) {
+				reset();
+			}
 			break;
 		case 'incrementRest':
-			incrementDecrement(document.getElementById("restTime").id,"increment");
+			if (restTime > 58) {
+				return 0;
+			}
+			restTime++;
+			document.getElementById("restTime").innerHTML = restTime;
+			if (!isWorking) {
+				reset();
+			}
 			break;
 		case 'decrementRest':
-			incrementDecrement(document.getElementById("restTime").id,"decrement");
+			if (restTime < 2) {
+				return 0;
+			}
+			restTime--;
+			document.getElementById("restTime").innerHTML = restTime;
+			if (!isWorking) {
+				reset();
+			}
 			break;
 	}
+}
+
+function initializeApp() {
+	randomizeWallpaper()
+	initializeValuesFromCookies();
+	initializeTime();
 }
