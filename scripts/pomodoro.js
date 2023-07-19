@@ -20,7 +20,7 @@ function updateCookie() {
 
 function checkCookie() {
 	if (document.cookie.length === 0) {
-		alert("This site is using cookies to store information. Clicking the button in this notification means, that you consent to save cookies on your device");
+		alert("This site is using cookies to store information. Closing this notification means, that you consent to save cookies on your device");
 		setCookie();
 	}
 } 
