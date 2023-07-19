@@ -1,4 +1,5 @@
 var time,
+	isCookieDenied,
 	isTimerClear = true,
 	isWorking = false,
 	mode = "work",
@@ -10,18 +11,34 @@ var time,
 	
 function setCookie() {
 	document.cookie = "workTime=25";
-  document.cookie = "restTime=5";
+	document.cookie = "restTime=5";
 }
 
 function updateCookie() {
-	document.cookie = "workTime="+workTime;
-  document.cookie = "restTime="+restTime;
+	if (!isCookieDenied) {
+		document.cookie = "workTime="+workTime;
+		document.cookie = "restTime="+restTime;
+	}
+}
+
+function acceptCookies() {
+	location.href = "#";
+	isCookieDenied = 0;
+	setCookie();
+	initializeValuesFromCookies();
+	initializeTime();
+}
+
+function denyCookies() {
+	location.href = "#";
+	isCookieDenied = 1;
+	initializeValuesFromCookies()
+	initializeTime();
 }
 
 function checkCookie() {
-	if (document.cookie.length === 0) {
-		alert("This site is using cookies to store information. Closing this notification means, that you consent to save cookies on your device");
-		setCookie();
+	if (document.cookie.length == 0) {
+		location.href = "#cookiesWindow";
 	}
 } 
 
@@ -41,9 +58,13 @@ function getCookie(name) {
 }
 
 function initializeValuesFromCookies() {
-	checkCookie();
-	workTime = getCookie("workTime");
-	restTime = getCookie("restTime");
+	if (!isCookieDenied) {
+		workTime = getCookie("workTime");
+		restTime = getCookie("restTime");
+	} else {
+		workTime = 25;
+		restTime = 5;
+	}
 	document.getElementById("workTime").innerHTML = workTime;
 	document.getElementById("restTime").innerHTML = restTime;
 }
@@ -228,6 +249,9 @@ function buttonsInSettings(clickedButtonID) {
 
 function initializeApp() {
 	randomizeWallpaper()
-	initializeValuesFromCookies();
-	initializeTime();
+	checkCookie();
+	if (document.cookie.length != 0) {
+		initializeValuesFromCookies();
+		initializeTime();
+	}
 }

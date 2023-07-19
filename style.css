@@ -139,7 +139,7 @@ button:active {
 		width: 65px;
 }
 
-/* settings window */
+/* settings and cookies window */
 
 .overlay {
 		position: fixed;
@@ -175,7 +175,7 @@ button:active {
 	transition: opacity 0.6s;
 }
 
-/* Items in settings */
+/* Items in settings window */
 
 td {
 	min-width: 19px;
@@ -205,6 +205,21 @@ td {
 
 a.linksInSettings {
 	color: #000000;
+}
+
+
+/* things in cookies window */
+
+.buttonInCookies {
+	color: #fafafa;
+	text-align: center; 
+	background-color: #333333;
+	padding: 10px;
+	margin-left: 2px;
+	margin-bottom: 2px;
+	border-radius: 20px;
+	display: inline-block;
+	transition: opacity 0.5s;
 }
 
 /* responsive design */
