@@ -1,5 +1,4 @@
 var time,
-	isCookieDenied,
 	isTimerClear = true,
 	isWorking = false,
 	mode = "work",
@@ -10,37 +9,26 @@ var time,
 	audio = new Audio('media/sounds/analog-alarm-clock.wav');
 	
 function setCookie() {
-	document.cookie = "workTime=25";
-	document.cookie = "restTime=5";
+	document.cookie = "workTime="+workTime+"; max-age=604800; path=/";
+	document.cookie = "restTime="+restTime+"; max-age=604800; path=/";
 }
 
 function updateCookie() {
-	if (!isCookieDenied) {
-		document.cookie = "workTime="+workTime;
-		document.cookie = "restTime="+restTime;
+	if (document.cookie.length != 0) {
+		setCookie();
 	}
 }
 
 function acceptCookies() {
 	location.href = "#";
-	isCookieDenied = 0;
 	setCookie();
-	initializeValuesFromCookies();
-	initializeTime();
+	//initializeValuesFromCookies();
+	//initializeTime();
 }
 
 function denyCookies() {
 	location.href = "#";
-	isCookieDenied = 1;
-	initializeValuesFromCookies()
-	initializeTime();
 }
-
-function checkCookie() {
-	if (document.cookie.length == 0) {
-		location.href = "#cookiesWindow";
-	}
-} 
 
 function getCookie(name) {
 	let cookieArr;
@@ -58,13 +46,8 @@ function getCookie(name) {
 }
 
 function initializeValuesFromCookies() {
-	if (!isCookieDenied) {
-		workTime = getCookie("workTime");
-		restTime = getCookie("restTime");
-	} else {
-		workTime = 25;
-		restTime = 5;
-	}
+	workTime = getCookie("workTime");
+	restTime = getCookie("restTime");
 	document.getElementById("workTime").innerHTML = workTime;
 	document.getElementById("restTime").innerHTML = restTime;
 }
@@ -249,8 +232,14 @@ function buttonsInSettings(clickedButtonID) {
 
 function initializeApp() {
 	randomizeWallpaper()
-	checkCookie();
-	if (document.cookie.length != 0) {
+	if (document.cookie.length == 0) {
+		workTime = 25;
+		restTime = 5;
+		document.getElementById("workTime").innerHTML = workTime;
+		document.getElementById("restTime").innerHTML = restTime;
+		initializeTime();
+		location.href = "#cookiesWindow";
+	} else {
 		initializeValuesFromCookies();
 		initializeTime();
 	}
