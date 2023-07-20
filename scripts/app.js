@@ -49,6 +49,21 @@ const wallpapers = [
 		"author":"Vitalii Khodzinskyi",
 		"link":"https://unsplash.com/photos/7WEi1kpLJYM"
 	},
+	{
+		"location":"media/images/wallpapers/liza-rusalskaya-0gqcBEe2rv8-unsplash.jpg",
+		"author":"Liza Rusalskaya",
+		"link":"https://unsplash.com/photos/0gqcBEe2rv8"
+	},
+	{
+		"location":"media/images/wallpapers/simon-slusarski-XHHPPDdz8KU-unsplash.jpg",
+		"author":"Simon Ślusarski",
+		"link":"https://unsplash.com/photos/XHHPPDdz8KU"
+	},
+	{
+		"location":"media/images/wallpapers/s-widua-Oadj-anVBM4-unsplash.jpg",
+		"author":"S. Widua",
+		"link":"https://unsplash.com/photos/a-lighthouse-on-top-of-a-cliff-next-to-a-body-of-water-Oadj-anVBM4"
+	},
 ]
 
 window.addEventListener('beforeunload', function (e) {
