@@ -9,8 +9,12 @@ var time,
 	audio = new Audio('media/sounds/analog-alarm-clock.wav');
 	
 function setCookie() {
-	document.cookie = "workTime="+workTime+"; max-age=604800; path=/";
-	document.cookie = "restTime="+restTime+"; max-age=604800; path=/";
+	let currentDate = new Date();
+    currentDate.setTime(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000));
+    let expires = currentDate.toUTCString();
+
+	document.cookie = `workTime=${workTime}; expires=${expires}; path=/`;
+	document.cookie = `restTime=${restTime}; expires=${expires}; path=/`;
 }
 
 function updateCookie() {
